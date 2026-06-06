@@ -1,0 +1,70 @@
+<html>
+    <head>
+      <link rel='stylesheet' href="{{ url_for('static', filename='css/style.css') }}">
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.2/socket.io.js'></script>
+      <script type='text/javascript'>
+         $(document).ready(function(){
+	    var socket = io.connect('http://192.168.72.221:5000');
+			
+	    $('OnButton').click(function(){
+	       socket.emit('Buzzering','on');
+	    });
+
+	    $('OffButton').click(function(){
+	       socket.emit('Buzzering','off');
+	    });
+
+        function BuzzerOn() {
+            socket.emit('Buzzering','on');
+        }
+        function BuzzerOff() {
+            socket.emit('Buzzering','off');
+        }
+
+	    //Event triggered when python web server received data from BBBW1
+	    socket.on('Web_TempEvent', function(cleandata) {
+            if (parseFloat(cleandata) > 30) {
+            	$('#tempid').addClass('Overshot');
+	            }
+            else {
+	            $('#tempid').removeClass('Overshot');
+	            }
+            document.getElementById("tempreature").innerHTML = 'Temp: ' + cleandata + '*C';
+		   console.log(cleandata);
+	    });
+
+		socket.on('Web_HumidEvent', function(cleandata) {
+            if (parseFloat(cleandata) > 85) {
+	            $('#humidid').addClass('Overshot');
+	        }
+            else {
+	            $('#humidid').removeClass('Overshot');
+	            }
+            document.getElementById("humidity").innerHTML = 'Humidity: ' + cleandata + '%';
+		   console.log(cleandata);
+	    });
+			
+         });
+      </script>
+   </head>
+   <body>
+    <div class="allholder">
+        <div class="buttons">
+            <h2>Buzzer Mode</h2>
+            <OnButton><button>ON</button></OnButton>
+            <OffButton><button>OFF</button></OffButton>
+        </div>
+        <div class="data">
+            <div class="tempholder" id="tempid">
+                <img src="../static/images/tempreature.png" alt="">
+                <p id="tempreature">No Data</p>
+            </div>
+            <div class="humidityholder" id="humidid">
+                <img src="../static/images/humidity.png" alt="">
+                <p id="humidity">No Data</p>
+            </div>
+        </div>
+    </div>
+   </body>
+</html>

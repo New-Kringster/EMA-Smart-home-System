@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: gray;
+}
+button {
+    border-radius: 30px;
+    padding: 16px 32px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 100px;
+    background-color: white;
+    border: 2px solid #00ba6c;
+}
+button:hover {
+    background-color: #00ba6c;
+    color: white;
+}
+.allholder {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Buttons {
+    border-radius: 12px;
+    border: 3px #00ba6c solid;
+    padding: 10px 30px
+}
+.Buttons h2 {
+    text-align: center;
+}
+.data div {
+    width: 230px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: 3px #00ba6c solid;
+    border-radius: 9999px;
+}
+.data div.img {
+    height: 100%;
+}
+.Overshot {
+    border: 3px #ba0000 solid;
+    background-color: #7f0000;
+}
