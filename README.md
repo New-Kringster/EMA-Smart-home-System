@@ -4,7 +4,7 @@ A Wi-Fi connected smart home system built on four BeagleBone Black Wireless (BBB
 
 This was a school group project. Our team was awarded an **A**.
 
-[Live Demo](https://csdpdemo.chiambucket.com) · [Promotional Video](https://www.youtube.com/watch?v=PFhsRaakJAs) · [Project Write-up](https://www.chiambucket.com/csdp.html)
+[Live Demo](https://csdpdemo.chiambucket.com) · [Promotional Video](https://www.youtube.com/watch?v=PFhsRaakJAs) · [Project Write-up (Braven)](https://www.chiambucket.com/csdp.html)
 
 ---
 
