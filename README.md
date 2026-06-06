@@ -73,7 +73,7 @@ pip install flask flask-socketio
 python WebServer.py
 ```
 
-Then open `http://192.168.72.221:5000` in a browser (or whatever IP you set in `WebServer.py`).
+Then open `http://[Your-IP]:5000` in a browser, ensure to change the target ip address in all the files to match your host IP (or whatever IP you set in `WebServer.py`).
 
 ---
 
